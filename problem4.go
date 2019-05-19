@@ -26,14 +26,31 @@ func is_palindrome(data int) bool {
 	return bool1
 }
 
-func main() {
+func sol1() {
 	for i := 999; i > 99; i-- {
-		for j := 999; j > 99; j-- {
+		for j := 999; j >= i; j-- {
 			if is_palindrome(i * j) {
-				fmt.Printf("%v ", i*j)
+				fmt.Printf("%v\n", i*j)
+				return
 				break
 				//break
 			}
 		}
 	}
+}
+
+func main() {
+     for diag := 0; diag < 999; diag++ {
+     	 for k := 0; k < diag + 1; k++ {
+	     	x := 999-diag+k;
+		y := 999-k;
+			if is_palindrome(x * y) {
+				fmt.Printf("%v\n", x*y)
+				return
+				break
+				//break
+			}
+
+	 }
+     }
 }
