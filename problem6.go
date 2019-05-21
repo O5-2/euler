@@ -5,22 +5,17 @@ import (
 )
 
 func square_of_sum(x int) int {
-	sum := 0
-	for i := 1; i < x+1; i++ {
-		sum += i
-	}
-	return sum * sum
+     return (x*x*(x+1)*(x+1))/4
 }
 
 func sum_of_squares(x int) int {
-	sum := 0
-	for i := 1; i < x+1; i++ {
-		sum += i * i
-	}
-	return sum
+     return (x*(x+1)*((2*x)+1))/6
 }
+
 func main() {
-	fmt.Printf("sum of squares is %v\n", sum_of_squares(100))
-	fmt.Printf("square of sum is %v\n", square_of_sum(100))
-	fmt.Printf("difference is %v\n", square_of_sum(100)-sum_of_squares(100))
+     	sumsquare := sum_of_squares(100)
+	squaresum := square_of_sum(100)
+	fmt.Printf("sum of squares is %v\n", sumsquare)
+	fmt.Printf("square of sum is %v\n", squaresum)
+	fmt.Printf("difference is %v\n", squaresum-sumsquare)
 }

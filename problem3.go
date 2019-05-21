@@ -49,6 +49,7 @@ func max_factor(x int) int {
 
 func main() {
 	fmt.Printf("%v\n", max_factor(600851475143))
+	return
 }
 
 // the input is 600851475143
