@@ -5,6 +5,9 @@ def factorial(x):
         return x*factorial(x-1)
 
 def latticePaths(x,y):
+    factorials = [1]
+    for i in range(1, x+y+1):
+        factorials.append(factorials[-1]*i)
     #numRows = x+y+1
     #if numRows == 0:
     #    return []
@@ -22,6 +25,6 @@ def latticePaths(x,y):
     #    triangle.append(current)
     #    count += 1
     #return triangle[x+y][y]
-    return factorial(x+y)/(factorial(x)*factorial(y))
+    return factorials[x+y]/(factorials[x]*factorials[y])
 
 print latticePaths(20,20)
